@@ -8,5 +8,6 @@
 </head>
 <body>
 	Hello JBoss - Artemas.M
+	<p> Session:  <%= session.getAttribute("name") %> </p>
 </body>
 </html>

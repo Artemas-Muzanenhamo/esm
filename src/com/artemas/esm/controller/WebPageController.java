@@ -1,5 +1,7 @@
 package com.artemas.esm.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebPageController {
 	
 	@RequestMapping("/")
-	public String showHome(){
+	public String showHome(HttpSession session){
+		
+		session.setAttribute("name", "Artenas");
+		
 		return "Home";
 	}
 
