@@ -8,6 +8,9 @@
 </head>
 <body>
 	Hello JBoss - Artemas.M
-	<p> Session:  <%= session.getAttribute("name") %> </p>
+	
+	<p> REQUEST SCOPE:  <%= request.getAttribute("name") %> </p>
+	
+	<p> Expression Lang: ${name} </p>
 </body>
 </html>
