@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,8 +10,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello JBoss - Artemas.M
+
+	<sql:query var="rs" dataSource="jdbc/springDB">
+		select id, name, email from offers
+	</sql:query>
+		
+	<h2>Results</h2>
 	
-	<b><c:out value="${name}"></c:out></b>
+	<c:forEach var="row" items="${rs.rows}">
+		Name ${row.name}<br/>
+		Email ${row.email}<br/>
+	</c:forEach>
+	
 </body>
 </html>
