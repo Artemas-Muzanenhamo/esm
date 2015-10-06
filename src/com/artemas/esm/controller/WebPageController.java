@@ -54,8 +54,9 @@ public class WebPageController {
 		return "createoffer"; //need createoffer.jsp
 	}
 	
-	@RequestMapping("/docreate")
-	public String doCreate(){
+	@RequestMapping(value="/docreate", method=RequestMethod.POST)// set in the form tag in the jsp.
+	public String doCreate(Model model, Offer offer){
+		System.out.println(offer);
 		return "offercreated"; //need createoffer.jsp
 	}
 
