@@ -1,14 +1,24 @@
 package com.artemas.esm.controller;
 
-import java.util.Map;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.artemas.esm.model.Offer;
+import com.artemas.esm.service.OffersService;
 
 @Controller
 public class WebPageController {
+	
+	private OffersService offersService;
+	
+	@Autowired
+	public void setOffersService(OffersService offersService){
+		this.offersService = offersService;
+	}
 	
 	/**
 	 * This method is another way to return the view provided
@@ -22,7 +32,9 @@ public class WebPageController {
 	@RequestMapping("/")
 	public String showHome(Model model){
 		
-		model.addAttribute("name", "Artemas");
+		List<Offer> offers = offersService.getCurrent();
+		
+		model.addAttribute("offers", offers);
 		
 		return "Home";
 	}

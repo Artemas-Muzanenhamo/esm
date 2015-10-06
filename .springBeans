@@ -9,6 +9,7 @@
 	<configs>
 		<config>web/WEB-INF/ESM-servlet.xml</config>
 		<config>src/com/artemas/esm/config/dao-context.xml</config>
+		<config>src/com/artemas/esm/config/service-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

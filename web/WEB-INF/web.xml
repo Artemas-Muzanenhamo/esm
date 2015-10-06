@@ -46,6 +46,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:com/artemas/esm/config/dao-context.xml
+			classpath:com/artemas/esm/config/service-context.xml
 		</param-value>
 	</context-param>
 	
