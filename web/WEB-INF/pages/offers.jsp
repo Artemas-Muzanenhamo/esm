@@ -10,8 +10,14 @@
 </head>
 <body>
 
-<p><a href="${pageContext.request.contextPath}/offers">Show Current Offers</a></p>
-<p><a href="${pageContext.request.contextPath}/createoffer">Add a new Offer</a></p>
-
+		
+	<h2>Offers Results</h2>
+	
+	<c:forEach var="offer" items="${offers}">
+		<p><c:out value="${offer}"></c:out></p>
+	</c:forEach>
+	
+	<p><a href="${pageContext.request.contextPath}/">Home</a></p>
+	
 </body>
 </html>

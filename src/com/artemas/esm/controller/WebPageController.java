@@ -29,14 +29,19 @@ public class WebPageController {
 	 * @param model - model passed in to allow you to add attributes to the model.
 	 * @return - the view specified as a String.
 	 */
-	@RequestMapping("/")
-	public String showHome(Model model){
+	@RequestMapping("/offers")
+	public String showOffers(Model model){
 		
 		List<Offer> offers = offersService.getCurrent();
 		
 		model.addAttribute("offers", offers);
 		
-		return "Home";
+		return "offers"; //need offers.jsp
+	}
+	
+	@RequestMapping("/createoffer")
+	public String createOffer(){
+		return "createoffer"; //need createoffer.jsp
 	}
 
 }
