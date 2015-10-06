@@ -1,8 +1,13 @@
 package com.artemas.esm.model;
 
+import javax.validation.constraints.Size;
+
 public class Offer {
 	
 	private int id;
+	
+	//Here we can supply the validation params for our field.
+	@Size(min=5, max=100)
 	private String name;
 	private String email;
 	private String text;
