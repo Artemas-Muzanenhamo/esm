@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+
+.formtable{
+	width: 400px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+input[type=text]{
+	width: 100px;
+}
+
+textarea {
+	width: 250px;
+	height:300px;
+}
+
+.label{
+	text-align: right;
+	vertical-align: top;
+}
