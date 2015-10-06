@@ -53,5 +53,10 @@ public class WebPageController {
 	public String createOffer(){
 		return "createoffer"; //need createoffer.jsp
 	}
+	
+	@RequestMapping("/docreate")
+	public String doCreate(){
+		return "offercreated"; //need createoffer.jsp
+	}
 
 }

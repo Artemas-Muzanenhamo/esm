@@ -8,8 +8,14 @@
 </head>
 <body>
 
-	<h2>Under Construction</h2>
-	
+		<form method="get" action="${pageContext.request.contextPath}/docreate">
+			<table>
+				<tr><td>Name: </td><td><input name="name" type="text"/></td></tr>
+				<tr><td>Email: </td><td><input name="email" type="text"/></td></tr>
+				<tr><td>Your Offer: </td><td><textarea rows="10" cols="10"></textarea></td></tr>
+				<tr><td> </td><td><input value="Create Advert" type="submit"/></td></tr>
+			</table>
+		</form>	
 	<p><a href="${pageContext.request.contextPath}/">Home</a></p>
 
 </body>
