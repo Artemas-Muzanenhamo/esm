@@ -1,4 +1,4 @@
-package com.artemas.esm.dao;
+package com.artemas.esm.model;
 
 public class Offer {
 	

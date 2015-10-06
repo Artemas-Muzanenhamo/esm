@@ -16,14 +16,18 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSourceUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.artemas.esm.dao.Offer;
+import com.artemas.esm.model.Offer;
 
 @Component("offersDao")
 public class OffersDAO {
 	
 	private NamedParameterJdbcTemplate jdbc;
 	
-	@Autowired
+	public OffersDAO(){
+		System.out.println("Successfully loaded offers DAO");
+	}
+	
+	//@Autowired
 	public void setDataSource(DataSource jdbc){
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
 	}

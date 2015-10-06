@@ -23,11 +23,30 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<description>MySQL Test App</description>
+	<description>MySQL ESM App</description>
 	<resource-ref>
 		<description>DB Connection</description>
 		<res-ref-name>jdbc/springDB</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 	</resource-ref>
+
+	<description>
+		ContextLoaderListener creates a root web-application-context 
+		for the web-application and puts it in the ServletContext. 
+		This context can be used to load and unload the spring-managed 
+		beans ir-respective of what technology is being used in the 
+		controller layer(Struts or Spring MVC).
+	</description>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:com/artemas/esm/config/dao-context.xml
+		</param-value>
+	</context-param>
+	
 </web-app>
