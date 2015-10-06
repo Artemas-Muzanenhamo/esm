@@ -10,21 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class WebPageController {
 	
-	/*@RequestMapping("/")
-	public ModelAndView showHome(){
-		
-		//created a MandV object with the view name as a param.
-		ModelAndView mv = new ModelAndView("Home");
-		
-		
-		Map<String, Object> model = mv.getModel();
-		
-		//add attributes to the model.
-		model.put("name", "Boris");
-		
-		return mv;
-	} */
-	
 	/**
 	 * This method is another way to return the view provided
 	 * the method passes the model as a param.
