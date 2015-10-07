@@ -12,10 +12,19 @@
 
 		
 	<h2>Offers Results</h2>
-	
-	<c:forEach var="offer" items="${offers}">
-		<p><c:out value="${offer}"></c:out></p>
-	</c:forEach>
+	<table>
+		<tr><td>Name</td><td>Email</td><td>Text</td></tr>
+		
+		<c:forEach var="offer" items="${offers}">
+			<tr>
+				<td><c:out value="${offer.name}"/></td>
+				
+				<td><c:out value="${offer.email}"/></td>
+				
+				<td><c:out value="${offer.text}"/></td>
+			</tr>
+		</c:forEach>
+	</table>
 	
 	<p><a href="${pageContext.request.contextPath}/">Home</a></p>
 	

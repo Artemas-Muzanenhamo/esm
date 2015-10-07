@@ -23,4 +23,15 @@ public class OffersService {
 		
 		return offersDao.getOffers();
 	}
+	
+	/**
+	 * Method call to the DAO to create the offer object 
+	 * passed in.
+	 * @param offer - object passed in from the Service 
+	 * Layer.
+	 */
+	public void create(Offer offer) {
+		offersDao.create(offer);
+		
+	}
 }

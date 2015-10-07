@@ -66,6 +66,10 @@ public class WebPageController {
 		if(result.hasErrors()){
 			return "createoffer"; // if validation fails.... return createoffer.
 		}
+		
+		//call the create method in the Service layer and pass in the valid object...
+		offersService.create(offer);
+		
 		return "offercreated"; //need createoffer.jsp
 	}
 
