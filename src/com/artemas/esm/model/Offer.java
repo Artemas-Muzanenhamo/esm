@@ -4,6 +4,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.artemas.esm.validation.ValidEmail;
+
 public class Offer {
 	
 	private int id;
@@ -13,7 +15,8 @@ public class Offer {
 	private String name;
 	
 	@NotNull
-	@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address.")
+	//@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address.")
+	@ValidEmail(message="This email is defo not valid !!")
 	private String email;
 	
 	@Size(min=20, max=100, message="Name must be between 20 and 100 characters")

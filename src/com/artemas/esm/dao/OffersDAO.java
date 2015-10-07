@@ -6,7 +6,6 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -39,6 +38,7 @@ public class OffersDAO {
 		
 		return jdbc.query("select * from offers", new RowMapper<Offer>(){
 
+			@Override
 			public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				//instatiate a new Offer object.
 				Offer offer = new Offer();
@@ -135,6 +135,7 @@ public class OffersDAO {
 		
 		return jdbc.queryForObject("select * from offers where id = :id", params, new RowMapper<Offer>(){
 
+			@Override
 			public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				//instatiate a new Offer object.
 				Offer offer = new Offer();
