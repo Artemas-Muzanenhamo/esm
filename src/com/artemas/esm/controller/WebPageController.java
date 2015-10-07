@@ -54,7 +54,9 @@ public class WebPageController {
 	}
 	
 	@RequestMapping("/createoffer")
-	public String createOffer(){
+	public String createOffer(Model model){
+		
+		model.addAttribute("offer", new Offer());
 		return "createoffer"; //need createoffer.jsp
 	}
 	
@@ -72,6 +74,8 @@ public class WebPageController {
 			for(ObjectError error : errors){
 				System.out.println(error.getDefaultMessage());
 			}
+			
+			return "createoffer"; // if validation fails.... return createoffer.
 		}else{
 			System.out.println("Form validated");
 		}
