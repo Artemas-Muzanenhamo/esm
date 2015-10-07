@@ -65,21 +65,8 @@ public class WebPageController {
 		
 		//check if the result passed in has errors...
 		if(result.hasErrors()){
-			System.out.println("Form does not validate");
-			
-			//return all errors as a list object...
-			List<ObjectError> errors = result.getAllErrors();
-			
-			//for each error in the list object, get the defaultMessage...
-			for(ObjectError error : errors){
-				System.out.println(error.getDefaultMessage());
-			}
-			
 			return "createoffer"; // if validation fails.... return createoffer.
-		}else{
-			System.out.println("Form validated");
 		}
-		
 		return "offercreated"; //need createoffer.jsp
 	}
 
