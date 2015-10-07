@@ -1,5 +1,7 @@
 package com.artemas.esm.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Offer {
@@ -7,9 +9,14 @@ public class Offer {
 	private int id;
 	
 	//Here we can supply the validation params for our field.
-	@Size(min=5, max=100)
+	@Size(min=5, max=100, message="Name must be between 5 and 100 characters")
 	private String name;
+	
+	@NotNull
+	@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address.")
 	private String email;
+	
+	@Size(min=20, max=100, message="Name must be between 20 and 100 characters")
 	private String text;
 	
 	//default constuctor.
