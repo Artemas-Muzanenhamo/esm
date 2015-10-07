@@ -5,9 +5,11 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,17 +35,16 @@ public class WebPageController {
 		return "Home";
 	}
 	
-	/**
-	 * This method is another way to return the view provided
-	 * the method passes the model as a param.
-	 * Also you can add attributes as you could in the 
-	 * ModelAndView method. 
-	 * 
-	 * @param model - model passed in to allow you to add attributes to the model.
-	 * @return - the view specified as a String.
-	 */
+	/* We have a class to handle database exceptions for all controllers...
+	 * @ExceptionHandler(DataAccessException.class) //handle database related exceptions...
+	public String handleDatabaseException(DataAccessException ex){
+		return "error";
+	} */
+	
 	@RequestMapping("/offers")
 	public String showOffers(Model model){
+		
+		//offersService.throwTestException();
 		
 		List<Offer> offers = offersService.getCurrent();
 		
